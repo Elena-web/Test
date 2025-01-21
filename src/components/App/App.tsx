@@ -48,9 +48,9 @@ function App() {
           )
         )
 
-		if (responses.length === 0) {
-			return;
-		}
+        if (responses.length === 0) {
+          return
+        }
 
         setCats(prevCats => prevCats.concat(responses.map((data: any) => data[0] as CatImage)))
       } catch (error) {
@@ -80,12 +80,12 @@ function App() {
   }
 
   const handleScroll = (event: React.UIEvent<HTMLDivElement>) => {
-    const { scrollTop, clientHeight, scrollHeight } = event.currentTarget;
+    const { scrollTop, clientHeight, scrollHeight } = event.currentTarget
 
     if (scrollHeight - scrollTop <= clientHeight + 50 && !loading) {
-        setPage(prevPage => prevPage + 1);
+      setPage(prevPage => prevPage + 1)
     }
-  };
+  }
 
   return (
     <>
